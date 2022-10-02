@@ -13,7 +13,7 @@ const generateQuote = function (data) {
   const randomQuote = data[Math.floor(Math.random() * data.length)];
   const { text, author } = randomQuote;
   quote.textContent = `"${text}"`;
-  author === ""
+  author === null
     ? (quoteAuthor.textContent = `- Anonymous`)
     : (quoteAuthor.textContent = `- ${author}`);
 };
@@ -33,6 +33,8 @@ api();
 quoteRefresh.addEventListener("click", api);
 //navigation location
 
+const sun = document.querySelector(".clock-intro--sun");
+const moon = document.querySelector(".clock-intro--moon");
 setInterval(function () {
   const now = new Date();
   const minutes = now.getMinutes();
@@ -43,9 +45,13 @@ setInterval(function () {
   if (hours >= 18 && hours <= 24) {
     background.classList.add("background-container--dark");
     timeOfDaySpan.textContent = "Good evening";
-  } else if (hours <= 6 && hours <= 12) {
+    moon.style.display = "block";
+    sun.style.display = "none";
+  } else if (hours > 24 && hours <= 12) {
     background.classList.add("background-container--day");
     timeOfDaySpan.textContent = "Good morning";
+    moon.style.display = "none";
+    sun.style.display = "block";
   } else {
     background.classList.add("background-container--day");
     timeOfDaySpan.textContent = "Good afternoon";

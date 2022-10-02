@@ -16,18 +16,18 @@
 }
 @-webkit-keyframes time {
   from {
-    transform: opacity(0);
+    opacity: 0;
   }
   to {
-    transform: opacity(1);
+    opacity: 1;
   }
 }
 @keyframes time {
   from {
-    transform: opacity(0);
+    opacity: 0;
   }
   to {
-    transform: opacity(1);
+    opacity: 1;
   }
 }
 *::before,
@@ -175,8 +175,8 @@ body {
 .time--divider {
   -webkit-animation-name: time;
           animation-name: time;
-  -webkit-animation-duration: 0.2s;
-          animation-duration: 0.2s;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;

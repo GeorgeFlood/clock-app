@@ -46,9 +46,9 @@ $color--white: #fff;
 
 @keyframes time {
   from {
-    transform: opacity(0);
+    opacity: 0;
   }
   to {
-    transform: opacity(1);
+    opacity: 1;
   }
 }

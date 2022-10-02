@@ -1,0 +1,94 @@
+*::before,
+*::after,
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.background-container--day {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -5;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/desktop/bg-image-daytime.jpg);
+}
+@media (max-width: 56.25em) {
+  .background-container--day {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -5;
+    background-image: url(../assets/tablet/bg-image-daytime.jpg);
+  }
+}
+@media (max-width: 37.5em) {
+  .background-container--day {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -5;
+    background-image: url(../assets/mobile/bg-image-daytime.jpg);
+  }
+}
+
+.background-container--dark {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: -5;
+  background-image: url(../assets/desktop/bg-image-nighttime.jpg);
+}
+@media (max-width: 56.25em) {
+  .background-container--dark {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -5;
+    background-image: url(../assets/tablet/bg-image-nighttime.jpg);
+  }
+}
+@media (max-width: 37.5em) {
+  .background-container--dark {
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    z-index: -5;
+    background-image: url(../assets/mobile/bg-image-nighttime.jpg);
+  }
+}
+
+.quote-container {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  font-size: 2rem;
+  color: #fff;
+  margin: 0 5rem;
+  padding-top: 5rem;
+}
+
+.quote {
+  display: flex;
+  align-items: center;
+}
+.quote--svg {
+  width: 5rem;
+}
+.quote-author {
+  margin: 0 5rem;
+}/*# sourceMappingURL=main.css.map */

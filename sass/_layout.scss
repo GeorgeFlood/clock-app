@@ -1,0 +1,74 @@
+*::before,
+*::after,
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+///COVERING BACKGROUND IMAGES
+.background-container--day {
+  @include background;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url(../assets/desktop/bg-image-daytime.jpg);
+
+  @include respond(tab-port) {
+    @include background;
+    background-image: url(../assets/tablet/bg-image-daytime.jpg);
+  }
+  @include respond(phone) {
+    @include background;
+    background-image: url(../assets/mobile/bg-image-daytime.jpg);
+  }
+}
+
+.background-container--dark {
+  @include background;
+  background-image: url(../assets/desktop/bg-image-nighttime.jpg);
+
+  @include respond(tab-port) {
+    @include background;
+    background-image: url(../assets/tablet/bg-image-nighttime.jpg);
+  }
+  @include respond(phone) {
+    @include background;
+    background-image: url(../assets/mobile/bg-image-nighttime.jpg);
+  }
+}
+
+///FOR THE QUOTE GENERATOR
+
+.quote-container {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+  font-size: 2rem;
+  color: $color--white;
+  margin: 0 5rem;
+  padding-top: 5rem;
+}
+
+.quote {
+  display: flex;
+  align-items: center;
+
+  &--p {
+  }
+  &--svg {
+    width: 5rem;
+  }
+
+  &-author {
+    margin: 0 5rem;
+    &--name {
+    }
+  }
+}

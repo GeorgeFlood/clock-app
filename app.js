@@ -1,7 +1,10 @@
-const background = document.querySelector(`.background-container--${"day"}`);
+const background = document.querySelector(`.background-container--day`);
 const quote = document.querySelector("#quote");
 const quoteAuthor = document.querySelector("#author");
 const quoteRefresh = document.querySelector("#quote-refresh");
+const hour = document.querySelector(".hour");
+const minute = document.querySelector(".minute");
+const timeOfDaySpan = document.querySelector(".clock--intro--timeofday");
 
 console.log(background);
 
@@ -10,7 +13,9 @@ const generateQuote = function (data) {
   const randomQuote = data[Math.floor(Math.random() * data.length)];
   const { text, author } = randomQuote;
   quote.textContent = `"${text}"`;
-  quoteAuthor.textContent = author;
+  author === ""
+    ? (quoteAuthor.textContent = `- Anonymous`)
+    : (quoteAuthor.textContent = `- ${author}`);
 };
 
 const api = function () {
@@ -27,6 +32,25 @@ api();
 
 quoteRefresh.addEventListener("click", api);
 //navigation location
+
+setInterval(function () {
+  const now = new Date();
+  const minutes = now.getMinutes();
+  const hours = now.getHours();
+  hour.textContent = hours;
+  minute.textContent = minutes;
+
+  if (hours >= 18 && hours <= 24) {
+    background.classList.add("background-container--dark");
+    timeOfDaySpan.textContent = "Good evening";
+  } else if (hours <= 6 && hours <= 12) {
+    background.classList.add("background-container--day");
+    timeOfDaySpan.textContent = "Good morning";
+  } else {
+    background.classList.add("background-container--day");
+    timeOfDaySpan.textContent = "Good afternoon";
+  }
+}, 1000);
 
 // create new Intl time format.
 

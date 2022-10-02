@@ -14,6 +14,22 @@
     transform: rotate(360deg);
   }
 }
+@-webkit-keyframes time {
+  from {
+    transform: opacity(0);
+  }
+  to {
+    transform: opacity(1);
+  }
+}
+@keyframes time {
+  from {
+    transform: opacity(0);
+  }
+  to {
+    transform: opacity(1);
+  }
+}
 *::before,
 *::after,
 * {
@@ -91,7 +107,6 @@ body {
 .quote-container {
   display: flex;
   flex-direction: column;
-  width: 45%;
   font-size: 2rem;
   color: #fff;
   margin: 0 10rem;
@@ -108,7 +123,6 @@ body {
   margin-right: 1rem;
 }
 .quote--svg {
-  width: 2.3rem;
   cursor: pointer;
   -webkit-animation-name: spin;
           animation-name: spin;
@@ -156,6 +170,17 @@ body {
   margin-top: 7rem;
   font-weight: 100;
   font-size: 3rem;
+}
+
+.time--divider {
+  -webkit-animation-name: time;
+          animation-name: time;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 
 .location {

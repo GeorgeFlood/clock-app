@@ -43,3 +43,12 @@ $color--white: #fff;
     transform: rotate(360deg);
   }
 }
+
+@keyframes time {
+  from {
+    transform: opacity(0);
+  }
+  to {
+    transform: opacity(1);
+  }
+}

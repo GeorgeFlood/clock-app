@@ -51,7 +51,6 @@ body {
 .quote-container {
   display: flex;
   flex-direction: column;
-  width: 45%;
   font-size: 2rem;
   color: $color--white;
   margin: 0 10rem;
@@ -68,7 +67,6 @@ body {
     margin-right: 1rem;
   }
   &--svg {
-    width: 2.3rem;
     cursor: pointer;
     animation-name: spin;
     animation-duration: 5000ms;
@@ -126,6 +124,13 @@ body {
     font-weight: 100;
     font-size: 3rem;
   }
+}
+
+.time--divider {
+  animation-name: time;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
 .location {

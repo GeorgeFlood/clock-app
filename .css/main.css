@@ -20,7 +20,7 @@ body {
   background-size: cover;
   background-position: center;
   z-index: -5;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/desktop/bg-image-daytime.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/desktop/bg-image-daytime.jpg);
 }
 @media (max-width: 56.25em) {
   .background-container--day {
@@ -29,7 +29,7 @@ body {
     background-size: cover;
     background-position: center;
     z-index: -5;
-    background-image: url(../assets/tablet/bg-image-daytime.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/tablet/bg-image-daytime.jpg);
   }
 }
 @media (max-width: 37.5em) {
@@ -39,7 +39,7 @@ body {
     background-size: cover;
     background-position: center;
     z-index: -5;
-    background-image: url(../assets/mobile/bg-image-daytime.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/mobile/bg-image-daytime.jpg);
   }
 }
 

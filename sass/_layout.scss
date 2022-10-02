@@ -17,16 +17,18 @@ body {
 ///COVERING BACKGROUND IMAGES
 .background-container--day {
   @include background;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url(../assets/desktop/bg-image-daytime.jpg);
 
   @include respond(tab-port) {
     @include background;
-    background-image: url(../assets/tablet/bg-image-daytime.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url(../assets/tablet/bg-image-daytime.jpg);
   }
   @include respond(phone) {
     @include background;
-    background-image: url(../assets/mobile/bg-image-daytime.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url(../assets/mobile/bg-image-daytime.jpg);
   }
 }
 

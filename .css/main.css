@@ -47,6 +47,7 @@ body {
 }
 
 .background-container--day {
+  overflow: hidden;
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -56,6 +57,7 @@ body {
 }
 @media (max-width: 56.25em) {
   .background-container--day {
+    overflow: hidden;
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -66,6 +68,7 @@ body {
 }
 @media (max-width: 37.5em) {
   .background-container--day {
+    overflow: hidden;
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -76,6 +79,7 @@ body {
 }
 
 .background-container--dark {
+  overflow: hidden;
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
@@ -85,6 +89,7 @@ body {
 }
 @media (max-width: 56.25em) {
   .background-container--dark {
+    overflow: hidden;
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -95,6 +100,7 @@ body {
 }
 @media (max-width: 37.5em) {
   .background-container--dark {
+    overflow: hidden;
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -175,8 +181,8 @@ body {
 .time--divider {
   -webkit-animation-name: time;
           animation-name: time;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
   -webkit-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
   -webkit-animation-timing-function: linear;
@@ -196,6 +202,59 @@ body {
 }
 
 .showMore {
-  border-radius: 50%;
-  height: 4rem;
+  border-radius: 5rem;
+  height: 3rem;
+  height: 7rem;
+  width: 15rem;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 1rem;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4rem;
+  border: none;
+  outline: none;
+}
+
+.more-deactive {
+  bottom: 40%;
+}
+
+.more--active {
+  position: -webkit-sticky;
+  position: sticky;
+  overflow: hidden;
+  bottom: 0.5%;
+  height: 40rem;
+  background-color: rgba(218, 218, 218, 0.9);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: space-around;
+}
+
+.more--timezone {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+}
+
+.more--title {
+  font-size: 2rem;
+  font-weight: 100;
+  text-transform: uppercase;
+  margin-top: 5rem;
+  color: rgba(55, 55, 55, 0.7);
+}
+
+.more--info {
+  font-size: 5rem;
+}
+
+.more--week {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
+  border-left: 0.3rem solid rgba(62, 62, 62, 0.2);
+  padding-left: 20rem;
 }/*# sourceMappingURL=main.css.map */

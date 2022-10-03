@@ -3,11 +3,18 @@ $color--white: #fff;
 
 ///mixin
 @mixin background() {
+  overflow: hidden;
   height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   z-index: -5;
+}
+
+@mixin active-position {
+  display: flex;
+  flex-direction: column;
+  margin: auto 0;
 }
 
 //media query break points

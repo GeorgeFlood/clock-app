@@ -6,7 +6,7 @@ const hour = document.querySelector(".hour");
 const minute = document.querySelector(".minute");
 const timeOfDaySpan = document.querySelector(".clock--intro--timeofday");
 
-console.log(background);
+const timeZone = document.querySelector("#timeZone");
 
 // random quote generator
 const generateQuote = function (data) {
@@ -37,22 +37,27 @@ const sun = document.querySelector(".clock-intro--sun");
 const moon = document.querySelector(".clock-intro--moon");
 setInterval(function () {
   const now = new Date();
-  const minutes = now.getMinutes();
-  const hours = now.getHours();
+  const minutes = `${now.getMinutes()}`.padStart(2, 0);
+  const hours = `${now.getHours()}`.padStart(2, 0);
+  const fullYear = now.getFullYear();
+
   hour.textContent = hours;
   minute.textContent = minutes;
+  timeZone.textContent = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-  if (hours >= 18 && hours <= 24) {
+  if (+hours >= 18 && hours <= 24) {
     background.classList.add("background-container--dark");
     timeOfDaySpan.textContent = "Good evening";
     moon.style.display = "block";
     sun.style.display = "none";
-  } else if (hours > 24 && hours <= 12) {
+  }
+  if (+hours > 1 && hours <= 12) {
     background.classList.add("background-container--day");
     timeOfDaySpan.textContent = "Good morning";
     moon.style.display = "none";
     sun.style.display = "block";
-  } else {
+  }
+  if (+hours >= 12) {
     background.classList.add("background-container--day");
     timeOfDaySpan.textContent = "Good afternoon";
   }

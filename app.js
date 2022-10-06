@@ -18,7 +18,6 @@ const clockDiv = document.querySelector(".clock-container");
 const quoteDiv = document.querySelector(".quote-container ");
 const moreActive = document.querySelector(".more");
 
-console.log(moreActive);
 let now,
   minutes,
   hours,
@@ -81,28 +80,31 @@ setInterval(function () {
 
   timeZone.textContent = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
-  if (+hours >= 18 && hours <= 24) {
-    background.classList.add("background-container--dark");
-    timeOfDaySpan.textContent = "Good evening";
-    moon.style.display = "block";
-    sun.style.display = "none";
+  const dynamicTime = function (backgroundImg, message, moonImg, sunImg) {
+    background.classList.add(`${backgroundImg}`);
+    timeOfDaySpan.textContent = `${message}`;
+    moon.style.display = `${moonImg}`;
+    sun.style.display = `${sunImg}`;
+  };
+
+  if (+hours >= 18 && +hours <= 24) {
+    dynamicTime("background-container--dark", "Good evening", "block", "none");
   }
-  if (+hours > 1 && hours <= 12) {
-    background.classList.add("background-container--day");
-    timeOfDaySpan.textContent = "Good morning";
-    moon.style.display = "none";
-    sun.style.display = "block";
+  if (+hours > 1 && +hours <= 12) {
+    dynamicTime("background-container--day", "Good morning", "none", "block");
   }
   if (+hours >= 12) {
-    background.classList.add("background-container--day");
-    timeOfDaySpan.textContent = "Good afternoon";
+    dynamicTime("background-container--day", "Good afternoon", "none", "block");
   }
 }, 1000);
 
-showMoreBtn.addEventListener("click", (e) => {
-  moreActive.classList.toggle("more--active");
-  clockDiv.classList.toggle("clock-container--active");
-  quoteDiv.classList.toggle("quote-container--active");
+const toggleClass = (variable, className) =>
+  variable.classList.toggle(`${className}`);
+
+showMoreBtn.addEventListener("click", () => {
+  toggleClass(moreActive, "more--active");
+  toggleClass(clockDiv, "clock-container--active");
+  toggleClass(quoteDiv, "quote-container--active");
 });
 
 // create new Intl time format.

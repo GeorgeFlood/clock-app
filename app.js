@@ -5,8 +5,31 @@ const quoteRefresh = document.querySelector("#quote-refresh");
 const hour = document.querySelector(".hour");
 const minute = document.querySelector(".minute");
 const timeOfDaySpan = document.querySelector(".clock--intro--timeofday");
+const sun = document.querySelector(".clock-intro--sun");
+const moon = document.querySelector(".clock-intro--moon");
 
 const timeZone = document.querySelector("#timeZone");
+const dayOfYear = document.querySelector("#dayOfYear");
+const dayOfWeek = document.querySelector("#dayOfWeek");
+const weekNum = document.querySelector("#weekNum");
+
+const showMoreBtn = document.querySelector(".showMore");
+const clockDiv = document.querySelector(".clock-container");
+const quoteDiv = document.querySelector(".quote-container ");
+const moreActive = document.querySelector(".more");
+
+console.log(moreActive);
+let now,
+  minutes,
+  hours,
+  fullYear,
+  getDay,
+  diff,
+  oneDay,
+  day,
+  newWeek,
+  weeks,
+  weekNumber;
 
 // random quote generator
 const generateQuote = function (data) {
@@ -33,16 +56,29 @@ api();
 quoteRefresh.addEventListener("click", api);
 //navigation location
 
-const sun = document.querySelector(".clock-intro--sun");
-const moon = document.querySelector(".clock-intro--moon");
 setInterval(function () {
-  const now = new Date();
-  const minutes = `${now.getMinutes()}`.padStart(2, 0);
-  const hours = `${now.getHours()}`.padStart(2, 0);
-  const fullYear = now.getFullYear();
+  now = new Date();
+  minutes = `${now.getMinutes()}`.padStart(2, 0);
+  hours = `${now.getHours()}`.padStart(2, 0);
+  fullYear = new Date(now.getFullYear(), 0, 0);
+  getday = now.getDay();
 
+  diff = now - fullYear;
+  oneDay = 1000 * 60 * 60 * 24;
+  day = Math.floor(diff / oneDay);
+
+  newWeek = new Date(now.getFullYear(), 0, 1);
+  weeks = Math.floor((now - newWeek) / (24 * 60 * 60 * 1000));
+  weekNumber = Math.ceil(weeks / 7);
+  //   const now = new Date();
+
+  console.log(weekNumber);
   hour.textContent = hours;
   minute.textContent = minutes;
+  dayOfYear.textContent = day;
+  dayOfWeek.textContent = getday;
+  weekNum.textContent = weekNumber;
+
   timeZone.textContent = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
   if (+hours >= 18 && hours <= 24) {
@@ -62,6 +98,12 @@ setInterval(function () {
     timeOfDaySpan.textContent = "Good afternoon";
   }
 }, 1000);
+
+showMoreBtn.addEventListener("click", (e) => {
+  moreActive.classList.toggle("more--active");
+  clockDiv.classList.toggle("clock-container--active");
+  quoteDiv.classList.toggle("quote-container--active");
+});
 
 // create new Intl time format.
 

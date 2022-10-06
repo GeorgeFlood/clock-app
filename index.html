@@ -63,6 +63,8 @@
             currently:
           </p>
         </div>
+
+        <!-- <div class="clock-container"> -->
         <div class="clock">
           <h1 class="clock--time">
             <span class="hour">11</span><span class="time--divider">:</span
@@ -73,27 +75,39 @@
 
         <div class="location">
           <h3 class="location--text">IN LONDON, UK</h3>
-          <button class="showMore">more</button>
+          <button class="showMore">
+            more
+            <span class="showMore--svg">
+              <svg width="14" height="9" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  stroke="#FFF"
+                  stroke-width="2"
+                  fill="none"
+                  d="m1 1 6 6 6-6"
+                />
+              </svg>
+            </span>
+          </button>
         </div>
       </div>
 
-      <div class="more--active">
+      <div class="more">
         <div class="more--timezone">
           <h4 class="more--title">Current Time zone</h4>
           <h2 class="more--info" id="timeZone"></h2>
 
           <h4 class="more--title">Day of the year</h4>
-          <h2 class="more--info">295</h2>
+          <h2 class="more--info" id="dayOfYear">295</h2>
         </div>
 
         <div class="more--week">
           <h4 class="more--title">Day of the week</h4>
-          <h2 class="more--info">5</h2>
+          <h2 class="more--info" id="dayOfWeek">5</h2>
 
           <h4 class="more--title">Week Number</h4>
-          <h2 class="more--info">42</h2>
+          <h2 class="more--info" id="weekNum">42</h2>
         </div>
       </div>
-    </div>
+
   </body>
 </html>

@@ -55,6 +55,12 @@ body {
   color: $color--white;
   margin: 0 10rem;
   padding-top: 5rem;
+  opacity: 1;
+  transition: opacity ease-in-out 0.5s;
+
+  &--active {
+    opacity: 0;
+  }
 }
 
 .quote {
@@ -83,9 +89,15 @@ body {
 
 ///CLOCK CONTAINER
 .clock-container {
+  position: relative;
+  bottom: 0;
   display: flex;
   flex-direction: column;
   margin: 30rem 10rem 0 10rem;
+  transition: all ease-in-out 0.6s;
+  &--active {
+    bottom: 30%;
+  }
 }
 
 .clock-intro {
@@ -114,6 +126,7 @@ body {
   line-height: 1.2;
   color: $color--white;
   margin-top: auto;
+  transition: all ease-in-out 0.7s;
 
   &--time {
     font-size: 15rem;
@@ -158,21 +171,29 @@ body {
   letter-spacing: 0.4rem;
   border: none;
   outline: none;
+  z-index: 50;
+  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.45);
 }
 
-.more-deactive {
-  bottom: 40%;
+.showMore--svg {
+  padding: 1.4rem;
+  border-radius: 50%;
+  background-color: black;
 }
 
-.more--active {
+.more {
   position: sticky;
-  overflow: hidden;
-  bottom: 0.5%;
-  height: 40rem;
+  height: 40vh;
   background-color: rgba(218, 218, 218, 0.9);
   backdrop-filter: blur(5px);
+  transform: translateY(40%);
   display: flex;
   justify-content: space-around;
+  transition: transform cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.7s;
+
+  &--active {
+    transform: translateY(-62%);
+  }
 }
 
 .more--timezone {

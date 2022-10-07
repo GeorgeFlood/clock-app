@@ -53,6 +53,10 @@ const api = function () {
 api();
 
 quoteRefresh.addEventListener("click", api);
+
+setInterval(function () {
+  api(generateQuote);
+}, 10000);
 //navigation location
 
 setInterval(function () {
@@ -75,6 +79,32 @@ setInterval(function () {
   hour.textContent = hours;
   minute.textContent = minutes;
   dayOfYear.textContent = day;
+
+  switch (getday) {
+    case 0:
+      getday = "Sunday";
+      break;
+    case 1:
+      getday = "Monday";
+      break;
+    case 2:
+      getday = "Tuesday";
+      break;
+    case 3:
+      getday = "Wednesday";
+      break;
+    case 4:
+      getday = "Thursday";
+      break;
+    case 5:
+      getday = "Friday";
+      break;
+    case 6:
+      getday = "Saturday";
+  }
+
+  console.log(getday);
+
   dayOfWeek.textContent = getday;
   weekNum.textContent = weekNumber;
 
@@ -93,7 +123,7 @@ setInterval(function () {
   if (+hours > 1 && +hours <= 12) {
     dynamicTime("background-container--day", "Good morning", "none", "block");
   }
-  if (+hours >= 12) {
+  if (+hours >= 12 && +hours <= 18) {
     dynamicTime("background-container--day", "Good afternoon", "none", "block");
   }
 }, 1000);
@@ -102,6 +132,8 @@ const toggleClass = (variable, className) =>
   variable.classList.toggle(`${className}`);
 
 showMoreBtn.addEventListener("click", () => {
+  const showSVG = document.querySelector("showMore--svg");
+  console.log(showSVG);
   toggleClass(moreActive, "more--active");
   toggleClass(clockDiv, "clock-container--active");
   toggleClass(quoteDiv, "quote-container--active");

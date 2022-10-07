@@ -125,15 +125,32 @@ body {
 .quote-container--active {
   opacity: 0;
 }
+@media (max-width: 56.25em) {
+  .quote-container {
+    margin: 0 auto;
+    padding-top: 2rem;
+  }
+}
 
 .quote {
   display: flex;
   align-items: center;
   transition: all ease-in-out 0.2s;
 }
+@media (max-width: 56.25em) {
+  .quote {
+    flex-direction: column-reverse;
+  }
+}
 .quote--p {
   line-height: 1.4;
   margin-right: 1rem;
+}
+@media (max-width: 56.25em) {
+  .quote--p {
+    text-align: center;
+    margin: 1rem 1rem;
+  }
 }
 .quote--svg {
   cursor: pointer;
@@ -146,8 +163,10 @@ body {
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
 }
-.quote-author {
-  margin: 0 5rem;
+@media (max-width: 56.25em) {
+  .quote--author__name {
+    margin: 0rem 1rem;
+  }
 }
 .clock-container {
   position: relative;
@@ -158,7 +177,7 @@ body {
   transition: all ease-in-out 0.5s;
 }
 .clock-container--active {
-  bottom: 30%;
+  bottom: 35%;
 }
 
 .clock-intro {
@@ -205,6 +224,7 @@ body {
 
 .location {
   display: flex;
+  align-items: center;
   color: #fff;
   text-transform: uppercase;
   justify-content: space-between;
@@ -216,6 +236,7 @@ body {
 }
 
 .showMore {
+  position: relative;
   border-radius: 5rem;
   height: 3rem;
   height: 7rem;
@@ -228,8 +249,16 @@ body {
   letter-spacing: 0.4rem;
   border: none;
   outline: none;
-  z-index: 50;
-  box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.45);
+  transition: all ease-in-out 0.3s;
+  bottom: 0;
+}
+.showMore:hover {
+  bottom: 4px;
+  transform: scale(1.04);
+}
+.showMore:active {
+  bottom: -4px;
+  transform: scale(0.98);
 }
 
 .showMore--svg {
@@ -241,7 +270,7 @@ body {
 .more {
   position: -webkit-sticky;
   position: sticky;
-  height: 40vh;
+  height: 50%;
   background-color: rgba(218, 218, 218, 0.9);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);

@@ -165,7 +165,7 @@ body {
 }
 @media (max-width: 56.25em) {
   .quote--author__name {
-    margin: 0rem 1rem;
+    text-align: center;
   }
 }
 .clock-container {
@@ -230,6 +230,11 @@ body {
   justify-content: space-between;
   margin: 0 2rem;
 }
+@media (max-width: 56.25em) {
+  .location {
+    flex-direction: column;
+  }
+}
 .location--text {
   font-size: 2rem;
   font-weight: 100;
@@ -252,6 +257,11 @@ body {
   transition: all ease-in-out 0.3s;
   bottom: 0;
 }
+@media (max-width: 56.25em) {
+  .showMore {
+    margin: 5rem 0;
+  }
+}
 .showMore:hover {
   bottom: 4px;
   transform: scale(1.04);
@@ -270,6 +280,8 @@ body {
 .more {
   position: -webkit-sticky;
   position: sticky;
+  display: flex;
+  margin-top: auto;
   height: 50%;
   background-color: rgba(218, 218, 218, 0.9);
   -webkit-backdrop-filter: blur(5px);
@@ -279,8 +291,19 @@ body {
   justify-content: space-around;
   transition: transform cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.7s;
 }
+@media (max-width: 56.25em) {
+  .more {
+    height: 50%;
+    transform: translateY(60%);
+  }
+}
 .more--active {
-  transform: translateY(-62%);
+  transform: translateY(-60%);
+}
+@media (max-width: 56.25em) {
+  .more--active {
+    transform: translateY(-50%);
+  }
 }
 
 .more--timezone {
